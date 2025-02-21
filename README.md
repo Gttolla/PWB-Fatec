@@ -1,6 +1,7 @@
 # PWB-Fatec
  Advanced web and mobile programming techniques subject projects
 
-Projects technologies:
+
+### Projects technologies:
 
 calc - Angular
