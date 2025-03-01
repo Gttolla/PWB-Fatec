@@ -1,11 +1,20 @@
 html {
     background-color: #f4f4f4;
 }
+
+@media screen and (min-width: 768px) {
+
+    html,
+    body {
+        height: 100%;
+        overflow: hidden;
+    }
+}
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
 }
