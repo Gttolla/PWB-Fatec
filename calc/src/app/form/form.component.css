@@ -1,47 +1,70 @@
+span {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2vh;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .calculator-form {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
-    padding: 10;
-}
-.calculator-form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    padding: 15px;
-    gap: 10px;
-    background-color: rgba(0, 0, 0, 0.2);
+    padding: 25px 20px;
+    gap: 2vh;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-.calculator-form-container input {
+
+.calculator-form input {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
     text-align: center;
 }
-.calculator-form-container input:focus {
+
+.calculator-form input:focus {
     outline: none;
     border-color: blue;
 }
-.calculator-form-container span {
-    font-size: 20px;
-    font-weight: 1000;
-}
-.calculator-form-container button {
+
+.label-container {
+    display: flex;
     width: 100%;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.buttons-container {
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: row;
+    gap: 1vh;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.buttons-container button {
+    flex: 1 1 calc(33.33% - 1vh);
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: none;
     background: blue;
     color: white;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 20px;
     cursor: pointer;
-    margin-top: 5%;
 }
-.calculator-form-container button:hover {
-    background-color: darkblue;
+
+.buttons-container button:hover {
+    background: darkblue;
+    transition: 0.1s;
 }
