@@ -12,6 +12,7 @@ html {
 }
 
 body {
+    margin-bottom: 5vh;
     font-family: Arial, sans-serif;
     text-align: center;
     display: flex;

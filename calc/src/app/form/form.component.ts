@@ -32,8 +32,14 @@ export class FormComponent {
     this.history.push(`${this.num1} ÷ ${this.num2} = ${this.result}`);
   }
   onClickPow() {
-    this.result = Math.pow(this.num1, this.num2);
-    this.history.push(`${this.num1} ^ ${this.num2} = ${this.result}`);
+    if (this.num2 === 0) {
+      this.result = Math.pow(this.num1, 2);
+      this.history.push(`${this.num1} ^ 2 = ${this.result}`);
+    }	
+    else {
+      this.result = Math.pow(this.num1, this.num2);
+      this.history.push(`${this.num1} ^ ${this.num2} = ${this.result}`);
+    }
   }
   onClickSqrt() {
     this.result = Math.sqrt(this.num1);
@@ -52,8 +58,12 @@ export class FormComponent {
 
   onClickAddNumbersToCount(numbers: string) {
     this.currentNumbers = numbers;
-    this.num1 = Number(this.currentNumbers.split(' ')[0]);
-    this.num2 = Number(this.currentNumbers.split(' ')[2]);
+    if (this.currentNumbers.includes('√')) {
+      this.num1 = Number(this.currentNumbers.split('√')[1].split(' ')[0]);
+    } else {
+      this.num1 = Number(this.currentNumbers.split(' ')[0]);
+      this.num2 = Number(this.currentNumbers.split(' ')[2]);
+    }
   }
 
 }
