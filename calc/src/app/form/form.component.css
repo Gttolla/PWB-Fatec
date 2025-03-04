@@ -23,6 +23,12 @@ span {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+@media screen and (min-width: 768px) {
+    .calculator-form {
+        max-height: 43vh;
+    }
+}
+
 .calculator-form input {
     padding: 10px;
     border-radius: 5px;
@@ -67,4 +73,43 @@ span {
 .buttons-container button:hover {
     background: darkblue;
     transition: 0.1s;
+}
+
+.history-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.history-button:hover {
+    color: #ccc;
+    transition: 0.1s;
+}
+
+#history-count-button {
+    background-color: rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    width: 100%;
+    margin-top: 2vh;
+    border-radius: 5px;
+}
+
+#history-count-button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: 0.1s;
+}
+
+#result-container-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 2vh;
+    gap: 1vh;
 }

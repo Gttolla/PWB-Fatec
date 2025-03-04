@@ -1,7 +1,8 @@
 <div class="main-container">
     <form class="calculator-form">
-        <span>Calculadora</span>
 
+        <span>Calculadora</span>
+        
         <div class="label-container">
             <label for="num1">Número 1</label>
             <input type="number" [(ngModel)]="num1" (click)="onClickClearField('num1')" [value]="num1 === 0 ? '' : num1"
@@ -25,7 +26,32 @@
     </form>
 
     <div class="calculator-form">
-        <span style="margin-bottom: 10px;">Resultado</span>
-        <p>{{result}}</p>
+        <div id="result-container-header">
+            <span style="margin-right: 5vh;">{{showHistory ? "Histórico" : "Resultado"}}</span>
+            
+            <button class="history-button" *ngIf="showHistory" id="clear-history-button" (click)="onClickClearHistory()">
+                <mat-icon color="red">delete</mat-icon>  
+            </button>
+
+            <button class="history-button" (click)="showHistory = !showHistory">
+                <mat-icon>{{showHistory ? 'close' : 'history'}}</mat-icon>
+            </button>
+        </div>
+
+        <div style="overflow-y: auto; width: 100%;">
+            <div *ngIf="showHistory">
+                <div *ngIf="history.length === 0">
+                    <p>Nenhum cálculo realizado</p>
+                </div>
+
+                <div *ngFor="let operation of history.reverse()">
+                    <button id="history-count-button" (click)="onClickAddNumbersToCount(operation)">{{operation}}</button>
+                </div>
+            </div>
+
+            <div *ngIf="!showHistory">
+                <p>{{result}}</p>
+            </div>
+        </div>
     </div>
 </div>
